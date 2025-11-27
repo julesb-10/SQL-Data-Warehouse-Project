@@ -12,11 +12,28 @@ WARNING:
   Running this script will DROP the Database and delete all data within it, proceed with caution
 */
 
--- Create Database:
-DROP DATABASE IF EXISTS DataWarehouse;
+USE master;
 
--- Create schemas for bronze, silver and gold layers:
+-- Drop db if it exists:
+Drop DATABASE IF EXISTS DataWarehouse;
+GO
 
+-- Create db
+CREATE DATABASE DataWarehouse;
+GO
+
+-- To create schemas within the newly created db:
+USE DataWarehouse;
+GO
+
+-- Bronze Schema:
 CREATE SCHEMA bronze;
+GO
+
+-- Silver Schema:
 CREATE SCHEMA silver;
+GO
+
+-- Gold Schema:
 CREATE SCHEMA gold;
+GO
